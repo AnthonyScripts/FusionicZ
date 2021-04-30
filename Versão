@@ -1,1 +1,11 @@
-1.2
+amount = 10000
+current = 0
+
+reward = game.Workspace.PlanetLoops:FindFirstChild("1")
+loop = getsenv(game.Players.LocalPlayer.PlayerScripts.PlanetLoopTouched)
+test = game.ReplicatedStorage.Events.LoopTouched
+
+while current <= amount do
+    test:FireServer(reward.Reward, loop.makecode(), "1", "clear")
+    current = current +1
+end
